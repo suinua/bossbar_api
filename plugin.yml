@@ -1,4 +1,4 @@
 name: BossBarSystem
-main: bossbar_system\Main
+main: bossbar_api\Main
 version: 1.0.0
 api: 3.0.0

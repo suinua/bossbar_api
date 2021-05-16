@@ -7,52 +7,52 @@ BossBarには `ID`と`TYPE` の２つがあります。
 
 ### 生成
 ```php
-use bossbar_system\BossBar;
-use bossbar_system\model\BossBarType;
+use bossbar_api\Bossbar;
+use bossbar_api\BossbarType;
 use pocketmine\Player;
 
 /** @var Player $player */
-$bossbar = new BossBar($player, new BossBarType("Lobby"), "Hello!", 1.0);
+$bossbar = new Bossbar($player, new BossbarType("Lobby"), "Hello!", 1.0);
 ```
 
 ### 送り方
 ```php
-use bossbar_system\BossBar;
+use bossbar_api\Bossbar;
 
-/** @var BossBar $bossbar */
+/** @var Bossbar $bossbar */
 $bossbar->send();
 ```
 
 ### 取得
 ```php
-use bossbar_system\BossBar;
-use bossbar_system\model\BossBarType;
-use bossbar_system\model\BossBarId;
+use bossbar_api\BossBar;
+use bossbar_api\BossbarType;
+use bossbar_api\BossbarId;
 use pocketmine\Player;
 
-/** @var BossBarId $bossbarId */
-$bossbar = BossBar::findById($bossbarId);
+/** @var BossbarId $bossbarId */
+$bossbar = Bossbar::findById($bossbarId);
 
 /** @var Player $player */
-/** @var BossBarType $bossbarType */
+/** @var BossbarType $bossbarType */
 $bossbar = BossBar::findByType($player,$bossbarType);
 
-$bossbar = BossBar::getBelongings($player);
+$bossbar = BossBar::getBossbars($player);
 ```
 
 ### 削除
 ```php
-use bossbar_system\BossBar;
+use bossbar_api\Bossbar;
 
-/** @var BossBar $bossbar */
+/** @var Bossbar $bossbar */
 $bossbar->remove();
 ```
 
 ### 更新
 ```php
-use bossbar_system\BossBar;
+use bossbar_api\Bossbar;
 
-/** @var BossBar $bossbar */
+/** @var Bossbar $bossbar */
 $bossbar->updatePercentage(0.5);
 $bossbar->updateTitle("50%");
 ```
